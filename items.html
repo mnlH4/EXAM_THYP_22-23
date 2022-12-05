@@ -1,0 +1,27 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>My Exam Page</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+   
+  </head>
+  <body>
+    <div id="main">
+    </div>
+    <script>
+        function getData(){
+            return  d3.json("items.json");
+        }
+        var data = getData();
+        
+        function showItems (data){
+            d3.select('main').selectAll('div').data(data).enter.append('div')
+            .attr('id',(d,i)=>'id'+i)
+            .html((d,i)=>'Element ID : '+i+' '+d['@id'][0]['@value']
+             +'<br> Title : '+d['dcterms:title'][0]['@value']
+             +'<br> Media : '+d['o:media'][0]['@value'])            
+        }
+
+    </script>
+  </body>
+  </html>

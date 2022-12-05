@@ -1,0 +1,102 @@
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>EXAM_THYP_22-23</title> 
+   
+  </head>
+  <body>
+    <h1><strong> 1- JavaScript</strong></h1>
+    <p>
+    function newAlea(){<br>
+        let svg = d3.select("#svgLoad"), diapo, url, conf = confs[Math.floor(Math.random()*confs.length)];<br>
+        url =conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapos.length);<br>
+        let url1, url2, url3;<br>
+        url1=conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapos.length);<br>
+        url2=conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapos.length);<br>
+        url3=conf.urlSlide+'?diapo='+Math.floor(Math.random()*conf.diapos.length);<br>
+        showDiapo(url, url1,url2,url3);<br>
+
+    }<br>
+    function showDiapo(url,url1,url2,url3){<br>
+        console.log(url);<br>
+        d3.select('#aleaDiapo').attr('src',url);<br>
+        d3.select('#hyplink1').append("a")<br>
+                               .attr("href",url1)<br>
+                               .html("Diapo 1");<br>
+        d3.select('#hyplink2').append("a")<br>
+                               .attr("href",url2)<br>
+                               .html("Diapo 2");<br>
+        d3.select('#hyplink3').append("a")<br>
+                               .attr("href",url3)<br>
+                               .html("Diapo 3");<br>
+    }<br>
+
+   </p> 
+   <h1><strong> 2- TypeScript</strong></h1>
+   <p>
+    import { Component, OnInit } from '@angular/core';<br>
+
+@Component({<br>
+  selector: 'app-screen',<br>
+  templateUrl: './screen.component.html',<br>
+  styleUrls: ['./screen.component.scss']<br>
+})<br>
+export class ScreenComponent implements OnInit {<br>
+
+  constructor() { }<br>
+
+  ngOnInit(): void {<br>
+    this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js');<br>
+    this.loadScript('https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin3.min.js');<br>
+    this.loadScript('../assets/js/screen.js');<br>       
+  }<br>
+  public loadScript(url: string) {<br>
+    const body = <HTMLDivElement> document.body;<br>
+    const script = document.createElement('script');<br>
+    script.innerHTML = '';<br>
+    script.src = url;<br>
+    script.async = false;<br>
+    script.defer = true;<br>
+    body.appendChild(script);<br>
+  }<br>
+}
+<h1><strong> 3- Python </strong></h1>
+   <p>
+    from PIL import Image <br>
+    from pytesseract import pytesseract<br>
+    tesseract = r'C:\Users\User\AppData\Local\Tesseract-OCR\tesseract.exe'<br>
+    image = r'text_image.png'<br>
+    pytesseract.tesseract_cmd = tesseract<br>
+    img = Image.open('text_image.png')<br>
+    text = pytesseract.image_to_string(img)<br>
+    print(text)
+   </p>
+
+   <h1><strong> 4- PHP   </strong></h1>
+   <p>
+    <?php <br>
+    $texte = file_get_contents ("source.txt");<br>
+    $tab_tok = explode(" ", $texte);<br>
+    foreach ($tab_tok  as $indice => $mot)<br>
+    {<br>
+        if (strlen ($mot) > 2) echo "$indice : $mot", '<br>';<br>
+    }<br>
+    ?><br>
+   </p>
+   <h1><strong> 5- Ruby </strong></h1>
+   <p>
+    class ItsMeManel <br>
+        def begin(name) <br>
+            @name = name.capitalize <br>
+        end <br>
+        def firstProgram <br>
+            puts "Welcome to my first ruby program #{@name}!" <br>
+        end <br>
+        end <br>
+
+    welcome = ItsMeManel.new("Manel") <br>
+    welcome.firstProgram <br>
+   </p>
+
+  </body>
+  </html>

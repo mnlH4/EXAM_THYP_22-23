@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix o: <http://omeka.org/s/vocabs/o#> .
+@prefix grc: <https://gestionRelationChercheur.univ-paris8.fr/onto/grc#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#>.
+
+<https://gestionRelationChercheur.univ-paris8.fr/onto/grc##> a owl:Ontology ;
+    dcterms:title "Gestion des relation entre chercheurs" .
+
+grc:Chercheur a rdfs:Class ;
+    rdfs:label "Chercheur" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:Universite a rdfs:Class ;
+    rdfs:label "Université" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:Projet a rdfs:Class ;
+    rdfs:label "Projet" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:name a rdf:Property ;
+    rdfs:label "name" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:family-name a rdf:Property ;
+    rdfs:label "family-name" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:adresse a rdf:Property ;
+    rdfs:label "adresse" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:birthday a rdf:Property ;
+    rdfs:label "birthday" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:hasProject a rdf:Property ;
+    rdfs:label "a comme projet" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:belongsToUniv a rdf:Property ;
+    rdfs:label "appartient à l'université" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
+
+grc:worksWith a rdf:Property ;
+    rdfs:label "travail avec" ;
+    rdfs:domain o:Resource ;
+    vs:term_status "experimental" .
